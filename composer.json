@@ -7,6 +7,7 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "php-cs-fixer/shim": "^3.58",
         "symfony/console": "7.1.*",
         "symfony/dotenv": "7.1.*",
         "symfony/flex": "^2",
@@ -15,6 +16,7 @@
         "symfony/yaml": "7.1.*"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "*"
     },
     "config": {
         "allow-plugins": {
