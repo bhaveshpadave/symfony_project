@@ -1,0 +1,17 @@
+{% extends  'base.html.twig' %}
+
+{% block title %}Symfony app{% endblock %}
+
+{% block body %}
+
+    <h1>First Controller</h1>
+
+    <p>Lucky number is {{ rand_number }}</p>
+
+    {% if (rand_number < 100) %}
+
+        <p>Your lucky number is less than my lucky number 100</p>
+
+    {% endif %}
+
+{% endblock %}
