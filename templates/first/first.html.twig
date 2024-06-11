@@ -6,12 +6,25 @@
 
     <h1>First Controller</h1>
 
-    <p>Lucky number is {{ rand_number }}</p>
+    <p>Total number of books is {{ numberOfBooks * 10 }}</p>
 
-    {% if (rand_number < 100) %}
+    {% if (numberOfBooks > 10) %}
 
-        <p>Your lucky number is less than my lucky number 100</p>
+        <p>That's so many books</p>
 
     {% endif %}
+
+    <div>
+        <table>
+            <th>
+                <td>id</td>
+                <td>name</td>
+            </th>
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.name }}</td>
+            </tr>
+        </table>
+    </div>
 
 {% endblock %}

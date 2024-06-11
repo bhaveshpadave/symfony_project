@@ -2,6 +2,7 @@
 // src/Controller/FirstController.php
 namespace App\Controller;
 
+use App\Repository\BooksRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -9,12 +10,16 @@ use Symfony\Component\Routing\Attribute\Route;
 class FirstController extends AbstractController
 {
     #[Route('/firstcontroller')]
-    public function controller(): Response {
+    public function controller(BooksRepository $repo): Response {
 
-        $number = random_int(0, 100);
+        $allBooks = $repo->getAllBooks();
+        $numberOfBooks = count($allBooks);
+        $book = $allBooks[array_rand($allBooks)];
+
 
         return $this->render('first/first.html.twig', [
-            'rand_number' => $number,
+            'numberOfBooks' => $numberOfBooks,
+            'book' => $book,
         ]);
 
     }
